@@ -46,12 +46,12 @@
             this.btnRollback = new MetroFramework.Controls.MetroButton();
             this.txtPrno = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtPrno2 = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnApply = new MetroFramework.Controls.MetroButton();
-            this.txtPrno2 = new MetroFramework.Controls.MetroTextBox();
+            this.tbUrl = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -290,16 +290,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ERP 점유율 관리";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(914, 355);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 12);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "https://github.com/Shin920/WizitERP";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label7);
@@ -323,27 +313,6 @@
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 16;
             this.label7.Text = "제조번호";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(133, 75);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 12);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "※ 하이픈(-) 제외한 8자리 입력";
-            // 
-            // btnApply
-            // 
-            this.btnApply.ForeColor = System.Drawing.Color.Red;
-            this.btnApply.Location = new System.Drawing.Point(332, 39);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(102, 23);
-            this.btnApply.TabIndex = 15;
-            this.btnApply.Text = "적용";
-            this.btnApply.UseSelectable = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // txtPrno2
             // 
@@ -375,13 +344,42 @@
             this.txtPrno2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrno2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(133, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(175, 12);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "※ 하이픈(-) 제외한 8자리 입력";
+            // 
+            // btnApply
+            // 
+            this.btnApply.ForeColor = System.Drawing.Color.Red;
+            this.btnApply.Location = new System.Drawing.Point(332, 39);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(102, 23);
+            this.btnApply.TabIndex = 15;
+            this.btnApply.Text = "적용";
+            this.btnApply.UseSelectable = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // tbUrl
+            // 
+            this.tbUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUrl.Location = new System.Drawing.Point(906, 352);
+            this.tbUrl.Name = "tbUrl";
+            this.tbUrl.Size = new System.Drawing.Size(274, 14);
+            this.tbUrl.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 387);
+            this.Controls.Add(this.tbUrl);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -415,12 +413,12 @@
         private MetroFramework.Controls.MetroButton btnCancel;
         private MetroFramework.Controls.MetroTextBox txtPdno;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label7;
         private MetroFramework.Controls.MetroTextBox txtPrno2;
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroButton btnApply;
+        private System.Windows.Forms.TextBox tbUrl;
     }
 }
 

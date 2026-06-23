@@ -45,6 +45,12 @@ namespace spwho1
             dgvSp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSp.MultiSelect = false;
+
+            tbUrl.Text = "https://github.com/Shin920/WizitERP";
+            tbUrl.ReadOnly = true;
+            //tbUrl.BorderStyle = BorderStyle.none;
+            tbUrl.BackColor = this.BackColor;
+            tbUrl.TabStop = false;
         }
 
         private void DataLoadSession()
