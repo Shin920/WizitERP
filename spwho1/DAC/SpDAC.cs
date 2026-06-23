@@ -250,5 +250,26 @@ namespace spwho1.DAC
             }
         }
 
+        //안산공정 실종품 단순 WASO=NULL
+        public int Update(string prno)
+        {
+            try
+            {
+                string sql = @"UPDATE T_PSHDM SET WASO=NULL WHERE prno=@prno";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@prno", prno);                  
+
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                // 예외를 상위로 던지거나, 로깅
+                throw new Exception("Update 실패: " + ex.Message);
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using Google.Protobuf.WellKnownTypes;
+using MetroFramework.Controls;
 using spwho1.DAC;
 using System;
 using System.Collections.Generic;
@@ -274,6 +275,38 @@ namespace spwho1
                 catch (Exception ex)
                 {
                     MessageBox.Show("처리 실패: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            string prno = txtPrno2.Text.Trim();
+
+            if (prno.Length != 8 || !prno.All(char.IsDigit))
+            {
+                MessageBox.Show("제조번호 8자리로 입력하세요.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(prno + "\n를 표시합니까?", "제조번호 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+
+                SpDAC sDAC = new SpDAC();
+                int rowsAffected = sDAC.Update(prno);
+                sDAC.Dispose();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("수정 완료\n안산ERP에서 확인 해주세요", "알림");
+                    this.DialogResult = DialogResult.Yes;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("수정 실패.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

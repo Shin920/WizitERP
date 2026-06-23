@@ -47,11 +47,15 @@
             this.txtPrno = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnApply = new MetroFramework.Controls.MetroButton();
+            this.txtPrno2 = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSp
@@ -290,39 +294,93 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(917, 267);
+            this.label6.Location = new System.Drawing.Point(914, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(216, 12);
             this.label6.TabIndex = 13;
             this.label6.Text = "https://github.com/Shin920/WizitERP";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.txtPrno2);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.btnApply);
+            this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Location = new System.Drawing.Point(751, 227);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(532, 114);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "안산 실종 품목 찾기";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(953, 292);
+            this.label7.Location = new System.Drawing.Point(67, 46);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 12);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "another920@naver.com";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "제조번호";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(994, 319);
+            this.label8.Location = new System.Drawing.Point(133, 75);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 12);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "2026.06.22";
+            this.label8.Size = new System.Drawing.Size(175, 12);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "※ 하이픈(-) 제외한 8자리 입력";
+            // 
+            // btnApply
+            // 
+            this.btnApply.ForeColor = System.Drawing.Color.Red;
+            this.btnApply.Location = new System.Drawing.Point(332, 39);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(102, 23);
+            this.btnApply.TabIndex = 15;
+            this.btnApply.Text = "적용";
+            this.btnApply.UseSelectable = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // txtPrno2
+            // 
+            // 
+            // 
+            // 
+            this.txtPrno2.CustomButton.Image = null;
+            this.txtPrno2.CustomButton.Location = new System.Drawing.Point(114, 1);
+            this.txtPrno2.CustomButton.Name = "";
+            this.txtPrno2.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPrno2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPrno2.CustomButton.TabIndex = 1;
+            this.txtPrno2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPrno2.CustomButton.UseSelectable = true;
+            this.txtPrno2.CustomButton.Visible = false;
+            this.txtPrno2.Lines = new string[0];
+            this.txtPrno2.Location = new System.Drawing.Point(155, 39);
+            this.txtPrno2.MaxLength = 8;
+            this.txtPrno2.Name = "txtPrno2";
+            this.txtPrno2.PasswordChar = '\0';
+            this.txtPrno2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPrno2.SelectedText = "";
+            this.txtPrno2.SelectionLength = 0;
+            this.txtPrno2.SelectionStart = 0;
+            this.txtPrno2.ShortcutsEnabled = true;
+            this.txtPrno2.Size = new System.Drawing.Size(136, 23);
+            this.txtPrno2.TabIndex = 13;
+            this.txtPrno2.UseSelectable = true;
+            this.txtPrno2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPrno2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 387);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -335,6 +393,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,8 +416,11 @@
         private MetroFramework.Controls.MetroTextBox txtPdno;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label7;
+        private MetroFramework.Controls.MetroTextBox txtPrno2;
         private System.Windows.Forms.Label label8;
+        private MetroFramework.Controls.MetroButton btnApply;
     }
 }
 
