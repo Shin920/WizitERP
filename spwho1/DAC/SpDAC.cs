@@ -26,6 +26,12 @@ namespace spwho1.DAC
         public string Command { get; set; }
     }
 
+    public class PshdmItem
+    {
+        public bool IsSelected { get; set; }
+        public int W011 { get; set; }
+    }
+
     class SpDAC : IDisposable
     {
         SqlConnection conn;
@@ -250,24 +256,67 @@ namespace spwho1.DAC
             }
         }
 
-        //안산공정 실종품 단순 WASO=NULL
-        public int Update(string prno)
+        public List<PshdmItem> SelectW011List(string prno)
         {
-            try
+            List<PshdmItem> list = new List<PshdmItem>();
+
+            string sql = @"
+        SELECT W011
+        FROM T_PSHDM
+        WHERE PRNO = @prno
+        ORDER BY W011";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                string sql = @"UPDATE T_PSHDM SET WASO=NULL WHERE prno=@prno";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                cmd.Parameters.Add("@prno", SqlDbType.VarChar).Value = prno;
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@prno", prno);                  
-
-
-                    return cmd.ExecuteNonQuery();
+                    while (dr.Read())
+                    {
+                        list.Add(new PshdmItem
+                        {
+                            IsSelected = false,
+                            W011 = Convert.ToInt32(dr["W011"])
+                        });
+                    }
                 }
             }
-            catch (Exception ex)
+
+            return list;
+        }
+
+
+        //안산공정 실종품  WASO=NULL
+        public int Update(string prno, List<int> w011List)
+        {
+            if (w011List == null || w011List.Count == 0)
+                return 0;
+
+            using (SqlCommand cmd = new SqlCommand())
             {
-                // 예외를 상위로 던지거나, 로깅
-                throw new Exception("Update 실패: " + ex.Message);
+                cmd.Connection = conn;
+
+                cmd.Parameters.Add("@prno", SqlDbType.VarChar).Value = prno;
+
+                List<string> parameters = new List<string>();
+
+                for (int i = 0; i < w011List.Count; i++)
+                {
+                    string name = "@w" + i;
+
+                    parameters.Add(name);
+
+                    cmd.Parameters.Add(name, SqlDbType.Int).Value = w011List[i];
+                }
+
+                cmd.CommandText = $@"
+UPDATE T_PSHDM
+SET WASO = NULL
+WHERE PRNO = @prno
+AND W011 IN ({string.Join(",", parameters)})";
+
+                return cmd.ExecuteNonQuery();
             }
         }
 

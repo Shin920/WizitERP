@@ -42,3 +42,4 @@ C:\Users\Shin\source\repos\spwho1\spwho1\bin\Debug\System.Memory.xml
 C:\Users\Shin\source\repos\spwho1\spwho1\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Shin\source\repos\spwho1\spwho1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Shin\source\repos\spwho1\spwho1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Shin\source\repos\spwho1\spwho1\obj\Debug\spwho1.Form2.resources

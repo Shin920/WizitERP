@@ -27,7 +27,7 @@ namespace spwho1
 
         private void DefaultSet()
         {
-            //btn Color
+            //btn Color (kill)
             btnKill.UseCustomForeColor = true;
             btnKill.ForeColor = Color.Red;
 
@@ -207,6 +207,7 @@ namespace spwho1
 
                 DataLoadSession();
                 HighlightBlockingRows(); //색상 재설정
+                
             }
             catch (Exception ex)
             {
@@ -296,24 +297,24 @@ namespace spwho1
                 return;
             }
 
-            DialogResult result = MessageBox.Show(prno + "\n를 표시합니까?", "제조번호 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            using (SpDAC dac = new SpDAC())
             {
+                List<PshdmItem> list = dac.SelectW011List(prno);
 
-                SpDAC sDAC = new SpDAC();
-                int rowsAffected = sDAC.Update(prno);
-                sDAC.Dispose();
-
-                if (rowsAffected > 0)
+                if (list.Count == 0)
                 {
-                    MessageBox.Show("수정 완료\n안산ERP에서 확인 해주세요", "알림");
-                    this.DialogResult = DialogResult.Yes;
-                    this.Close();
+                    MessageBox.Show("조회된 데이터가 없습니다.");
+                    return;
                 }
-                else
+
+                using (Form2 frm = new Form2(list))
                 {
-                    MessageBox.Show("수정 실패.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        int rows = dac.Update(prno, frm.SelectedW011List);
+
+                        MessageBox.Show(rows + "건 수정되었습니다.");
+                    }
                 }
             }
         }

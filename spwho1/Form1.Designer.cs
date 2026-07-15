@@ -47,6 +47,7 @@
             this.txtPrno = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrno2 = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -292,6 +293,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtPrno2);
             this.groupBox3.Controls.Add(this.label8);
@@ -303,6 +305,17 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "안산 실종 품목 찾기";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(150, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 12);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "공정진행표 오류 시 진행";
             // 
             // label7
             // 
@@ -361,7 +374,7 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(102, 23);
             this.btnApply.TabIndex = 15;
-            this.btnApply.Text = "적용";
+            this.btnApply.Text = "조회";
             this.btnApply.UseSelectable = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -419,6 +432,7 @@
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroButton btnApply;
         private System.Windows.Forms.TextBox tbUrl;
+        private System.Windows.Forms.Label label6;
     }
 }
 
